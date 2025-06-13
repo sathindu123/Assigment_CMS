@@ -1,16 +1,17 @@
 -- Create the database
-CREATE DATABASE IF NOT EXISTS assignment_cms;
-USE assignment_cms;
+CREATE DATABASE IF NOT EXISTS cms;
+USE cms;
 
--- Create users table
+
 CREATE TABLE users (
-                       id VARCHAR(50) PRIMARY KEY,
-                       username VARCHAR(50) NOT NULL UNIQUE,
+                       id INT AUTO_INCREMENT PRIMARY KEY,
+                       username VARCHAR(50) UNIQUE NOT NULL,
                        password VARCHAR(255) NOT NULL,
-                       role ENUM('employee', 'admin') NOT NULL
+                       role ENUM('EMPLOYEE', 'ADMIN') NOT NULL
 );
 
--- Create complaints table
+
+
 CREATE TABLE complaints (
                             id VARCHAR(50) PRIMARY KEY,
                             user_id VARCHAR(50) NOT NULL,
