@@ -1,15 +1,14 @@
--- Create the database
+
 CREATE DATABASE IF NOT EXISTS cms;
 USE cms;
 
 
 CREATE TABLE users (
-                       id INT AUTO_INCREMENT PRIMARY KEY,
-                       username VARCHAR(50) UNIQUE NOT NULL,
+                       id VARCHAR(50) PRIMARY KEY,
+                       username VARCHAR(50) NOT NULL UNIQUE,
                        password VARCHAR(255) NOT NULL,
                        role ENUM('EMPLOYEE', 'ADMIN') NOT NULL
 );
-
 
 
 CREATE TABLE complaints (
@@ -22,7 +21,7 @@ CREATE TABLE complaints (
                             FOREIGN KEY (user_id) REFERENCES users(username) ON DELETE CASCADE
 );
 
--- Insert sample data
+
 INSERT INTO users (id,username, password, role) VALUES
                                                     ('U001','emp1', 'pass123', 'employee'),
                                                     ('U002','emp2', 'pass123', 'employee'),

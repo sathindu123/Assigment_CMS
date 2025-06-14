@@ -16,7 +16,7 @@
 
 <div class="login-container">
     <h2>Log in to CMS</h2>
-    <form method="POST" action="LogInServlet" >
+    <form method="POST" action="LogIn" >
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" required>
@@ -37,5 +37,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/js/LogIn.js"></script>
 </body>
 </html>
