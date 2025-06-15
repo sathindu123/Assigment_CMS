@@ -50,12 +50,13 @@ public class LoginServelet extends HttpServlet {
                     response.sendRedirect(contex + "/view/SignUP.jsp");
                 }
             }else {
-                response.sendRedirect(contex + "/view/Login.jsp");
+                request.setAttribute("error", "Invalid username or password.");
+                request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
             }
         } catch (SQLException e) {
-            request.setAttribute("error", "Invalid username, password, or role");
-            request.getRequestDispatcher(contex +"$/view/Login.jsp").forward(request, response);
-            throw new RuntimeException(e);
+            e.printStackTrace(); // optional: log error
+            request.setAttribute("error", "An internal error occurred. Please try again.");
+            request.getRequestDispatcher("/view/Login.jsp").forward(request, response);
         }
 
     }

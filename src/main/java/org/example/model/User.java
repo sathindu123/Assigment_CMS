@@ -1,12 +1,12 @@
 package org.example.model;
 
 public class User {
-    private int id;
+    private String id;
     private String userName;
     private String password;
     private String role;
 
-    public User(int id, String userName, String password, String role) {
+    public User(String id, String userName, String password, String role) {
         this.id = id;
         this.userName = userName;
         this.password = password;
@@ -14,24 +14,23 @@ public class User {
     }
 
     public User() {
-
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
                 '}';
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

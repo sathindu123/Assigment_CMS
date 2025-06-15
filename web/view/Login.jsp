@@ -16,7 +16,7 @@
 
 <div class="login-container">
     <h2>Log in to CMS</h2>
-    <form method="POST" action="LogIn" >
+    <form method="POST" action="${pageContext.request.contextPath}/LogIn" >
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" required>
