@@ -1,0 +1,243 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* Header styles */
+.dashboard-header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 1rem;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-title {
+    font-size: 1.8rem;
+}
+
+.company-description {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-role {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+/* Main content */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.dashboard-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-title h2 {
+    font-size: 2rem.4;
+    color: #2c3e50;
+}
+
+/* Form styles */
+.form-section {
+    background-color:  white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.0.1);
+    margin-bottom: 2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-full {
+    grid-column: span 1 / span 2;
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-input, .form-select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.form-message {
+    padding: 0.5rem;
+    margin: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+/* Table styles */
+.table-container {
+    overflow-x: auto;
+}
+
+.complaints-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.complaints-table th, .complaints-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.complaints-table th {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+}
+
+.complaints-table th:hover {
+    background-color: #2980b9;
+}
+
+.sort-icon::after {
+    content: '\25b5';
+    margin-left: 0.5rem;
+}
+
+.sort-icon.asc::after {
+    content: '\25b4';
+}
+
+.sort-icon.desc::after {
+    content: '\25be';
+}
+
+.status-badge {
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+}
+
+.status-pending {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.status-in-progress {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.status-resolved {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.no-data {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-full {
+        grid-column: span 1;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-actions {
+        margin-top: 1rem;
+    }
+
+    .complaints-table th, .complaints-table td {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+}

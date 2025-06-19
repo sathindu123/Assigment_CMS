@@ -45,9 +45,9 @@ public class LoginServelet extends HttpServlet {
 
 
                 if (role.equals("ADMIN")){
-                    response.sendRedirect(contex + "/view/SignUP.jsp");
+                    response.sendRedirect(contex + "/AdminDashServlet");
                 } else if (role.equals("EMPLOYEE")) {
-                    response.sendRedirect(contex + "/view/SignUP.jsp");
+                    response.sendRedirect(contex + "/ComplaintsDashBoardServlet");
                 }
             }else {
                 request.setAttribute("error", "Invalid username or password.");

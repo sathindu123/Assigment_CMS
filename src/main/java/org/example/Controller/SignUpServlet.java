@@ -40,7 +40,7 @@ public class SignUpServlet extends HttpServlet {
             int rep = userDao.insertUser(user, dataSource);
 
             if (rep > 0) {
-                resp.sendRedirect(context + "/view/Login.jsp");
+
             }else {
                 req.setAttribute("error", "Invalid username or password.");
                 req.getRequestDispatcher("/view/Login.jsp").forward(req, resp);
